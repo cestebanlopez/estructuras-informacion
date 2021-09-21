@@ -1,4 +1,4 @@
-package mcd;
+package co.edu.ucundinamarca.taller3;
 
 public class Mcd {
     
