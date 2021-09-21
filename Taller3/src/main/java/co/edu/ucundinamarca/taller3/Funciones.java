@@ -1,4 +1,4 @@
-package taller3;
+package co.edu.ucundinamarca.taller3;
 
 
 public class Funciones {
