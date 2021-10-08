@@ -1,7 +1,5 @@
 package co.edu.ucundinamarca.taller3;
 
-import java.util.Iterator;
-
 public class Dulces {
     
     public static void main(String[] args) {
