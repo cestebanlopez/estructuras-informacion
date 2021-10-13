@@ -1,6 +1,4 @@
-package co.edu.ucundinamarca.taller3;
-
-import co.edu.ucundinamarca.taller3.Libro;
+package ListasSimples;
 
 
 public class Listas {

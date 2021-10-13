@@ -1,4 +1,4 @@
-package co.edu.ucundinamarca.taller3;
+package ListasSimples;
 
 /**
  *

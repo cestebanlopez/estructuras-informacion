@@ -1,37 +1,74 @@
 package co.edu.ucundinamarca.taller3;
 
+
+
+import org.apache.log4j.Logger;
+import java.util.Scanner;
+
 public class Dulces {
-    
-    public static void main(String[] args) {
-        
-        Dulces arrayList[]=new Dulces[10]; 
-        arrayList[0]=new Dulces("Pipiolo");
-        arrayList[1]=new Dulces("Detodito");
-        arrayList[2]=new Dulces("Chocobreak");
-        arrayList[3]=new Dulces("Bombombum");
-        arrayList[4]=new Dulces("Frunas");
-        arrayList[5]=new Dulces("Galletas");
-        arrayList[6]=new Dulces("Chocolatina");
-        arrayList[7]=new Dulces("Tostacos");
-        arrayList[8]=new Dulces("Gomitas");
-        arrayList[9]=new Dulces("Choco Ramo");
-        
-     
+
+  static Logger log = Logger.getLogger(Dulces.class.getName());
+
+  Nodo primero;
+  Nodo ultimo;
+
+  public Dulces(){
+    primero = null;
+    ultimo = null;
+  }
+
+  public void imprimirIterando(String dulce){
+
+    Nodo nuevoNodo = new Nodo();
+
+    nuevoNodo.dulce = dulce;
+
+    if(primero == null){
+      primero = nuevoNodo;
+      primero.siguiente = null;
+      ultimo = primero;
+    }else {
+      ultimo.siguiente = nuevoNodo;
+      nuevoNodo.siguiente = null;
+      ultimo = nuevoNodo;
     }
 
-   public Dulces (String nombre){
-       this.nombre=nombre;
-    }
-    
-   public String getNombre() {
-        return nombre;
+  }
+  public void mostrarLista(){
+    Nodo actual = new Nodo();
+
+    actual = primero;
+
+    while(actual != null){
+      log.debug(actual.dulce);
+      actual = actual.siguiente;
     }
 
-    
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+
+  }
+
+
+
+
+
+  public static int imprimirSinIterador(String letras, int indice){
+
+    Scanner intr = new Scanner(System.in);
+
+    String[] dulces = new String[10];
+
+    for(int i = 0; i < indice; i++){
+      log.debug("Digite el dulce numero " + (i + 1));
+      dulces[i] = intr.next();
     }
-     
-  private String nombre;
+    log.debug("Los dulces son: ");
+
+    for(int i = 0; i < indice; i++){
+      log.debug(dulces[i] + " ");
+    }
+
+    return indice;
+  }
+
+
 }
-
