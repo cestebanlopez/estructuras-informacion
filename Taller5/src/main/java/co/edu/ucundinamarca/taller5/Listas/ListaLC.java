@@ -1,7 +1,10 @@
-package co.edu.ucundinamarca.taller5;
+package co.edu.ucundinamarca.taller5.Listas;
 
-import  co.edu.ucundinamarca.taller5.ListaLC;
-import co.edu.ucundinamarca.taller5.ListaLC;
+import co.edu.ucundinamarca.taller5.Main;
+import co.edu.ucundinamarca.taller5.Main;
+import co.edu.ucundinamarca.taller5.Main;
+
+
 import org.apache.log4j.Logger;
 
 

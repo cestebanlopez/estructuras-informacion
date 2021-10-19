@@ -1,11 +1,10 @@
 
 package co.edu.ucundinamarca.taller5;
 
-import co.edu.ucundinamarca.taller5.ListaLC;
+import co.edu.ucundinamarca.taller5.Lista;
+import co.edu.ucundinamarca.taller5.Empleado;
 import org.apache.log4j.Logger;
 import java.util.Scanner;
-
-import static java.lang.Integer.parseInt;
 
 /**
  * Clase Principal
@@ -17,48 +16,55 @@ public class Main {
 
     public static void main(String[] args) {
 
-      Scanner intr = new Scanner (System.in);
+        Scanner intr = new Scanner(System.in);
 
-      ListaLC lista = new ListaLC();
+        String nomEmpl = "";
+        String apeEmpl = "";
+        int fecha;
+        double salario;
 
-      int opcion = 0, elemento = 0;
+        Lista milista = new Lista();
+        int opcion = 0;
+        Empleado empleado = new Empleado();
 
-      do{
-        try{
-          log.debug("\n1. Agregar nodo la lista circular\n"
-                  + "2. Mostrar lista circular\n"
-                  + "3. Salir\n");
+        do{
+          try{
+              log.debug("\n1. Agregar empleado a la lista\n"
+                      + "2. Ver empleados");
 
-          opcion = intr.nextInt();
+              opcion = intr.nextInt();
 
-          switch (opcion){
-              case 1:
-                  log.info("\nIngrese el elemento del nodo");
-                  elemento = intr.nextInt();
-                  log.info("Agregando nodo al inicio");
-                  lista.insertar(elemento);
-                  break;
+              switch(opcion){
+                  case 1:
+                      log.info("Ingrese el nombre del empleado");
+                      empleado.setNombres(nomEmpl = intr.next());
+                      log.info("Ingrese el apellido del empleado");
+                      empleado.setNombres(apeEmpl = intr.next());
+                      log.info("Año de ingreso");
+                      empleado.setFechaIngreso(fecha = intr.nextInt());
+                      log.info("Salario");
+                      empleado.setSalario(salario = intr.nextDouble());
 
-              case 2:
-                  if(!lista.estaVacia()){
-                    lista.mostrarLista();
-                  }else{
-                      log.info("Lista vacia");
-                  }
-                  break;
-              case 3:
-                  log.info("Aplicacion finalizada");
+                      milista.agregarAlInicio(new Empleado(empleado.getNombres(), empleado.getApellidos(), empleado.getFechaIngreso(), empleado.getSalario()));
+                      break;
+                  case 2:
+                      if (!milista.estaVacia()) {
+                          log.info("Siguiente");
+                          milista.mostrarListaSig();
 
-              default:
-                  log.info(" ");
+                          log.info("Anterior");
+                          milista.mostrarListaAnt();
 
-
+                      } else {
+                          log.info("Lista vacia");
+                      }
+                      break;
+              }
+          }catch (Exception e){
+              log.info("Error");
           }
-        }catch(NumberFormatException n){
-            log.info("Error");
-        }
 
-      }while(opcion != 3);
+        }while(opcion != 2);
 
     }
 

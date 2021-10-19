@@ -1,42 +1,64 @@
 package co.edu.ucundinamarca.taller5;
 
-import java.util.Objects;
+import co.edu.ucundinamarca.taller5.Nodo;
 
-public class Lista {    
-    protected  Nodo inicio, fin; 
-//Punteros para saber donde esta el inicio y el fin    
-public Lista() {        
-    inicio = null;
-    fin = null;    
-} 
+public class Lista {
+    protected Nodo inicio, fin;
+    public Lista() {
+        inicio = null;
+        fin = null;
+    }
+    boolean estaVacia() {
+        return inicio == null;
+    }
 
-//Metodo para dejar vacia una lista    
-public boolean estaVacia() {        
-    if (inicio == null) {            
-        return true;
-    }else {            
-     return false;
-    }  
-}
- //Metodo para agregar un Nodo al inicio de la lista    
-public void agregarAlInicio(Object elemento) {        
-    Nodo nuevo = new Nodo(elemento, inicio, fin);
-        if (estaVacia()) {            
+    public void agregarAlInicio(Object elemento) {
+        Nodo nuevo = new Nodo((Integer) elemento, inicio, fin);
+        if (!estaVacia()) {
             inicio = nuevo;
-            inicio.sig = inicio;            
-            inicio.ant = inicio;            
-            fin = inicio;        
-        } else {            
+            inicio.sig = inicio;
+            inicio.ant = inicio;
+            fin = inicio;
+        } else {
             Nodo aux = inicio;
-            while 
-            (aux.getSig() != inicio) 
-            {                
-            aux = aux.getSig();
-            aux.setSig(nuevo);            
-            nuevo.setAnt(aux);           
-            nuevo.setSig(inicio);            
-            inicio.setAnt(nuevo);            
-            inicio = nuevo;        }    
+            while (aux.sig != inicio) {
+                aux = aux.sig;
+            }
+            aux.sig = nuevo;
+            nuevo.ant = aux;
+            nuevo.sig = inicio;
+            inicio.ant = nuevo;
+            inicio = nuevo;
+        }
+    }
+    public void mostrarListaSig() {
+        Nodo aux = inicio;
+        if (aux.sig == inicio && aux.ant == fin) {
+            System.out.print("[" + aux.dato + "]--->");
+        } else {
+            while (aux.sig != inicio) {
+                System.out.print("[" + aux.dato + "]--->");
+                aux = aux.sig;
+                if (aux.sig == inicio) {
+                    System.out.print("[" + aux.dato + "]--->");
+                }
+            }
+        }
+    }
+    public void mostrarListaAnt() {
+        Nodo aux = fin;
+        if (aux.sig == inicio && aux.ant == fin) {
+            System.out.print("[" + aux.dato + "]--->");
+        } else {
+            while (aux.ant != fin) {
+                System.out.print("[" + aux.dato + "]--->");
+                aux = aux.ant;
+                if (aux.ant == fin) {
+                    System.out.print("[" + aux.dato + "]--->");
+                }
+            }
+        }
+    }
 }
-}
-}
+
+
