@@ -3,7 +3,6 @@ package co.edu.ucundinamarca.taller6;
 import co.edu.ucundinamarca.taller6.Imprime;
 import org.apache.log4j.Logger;
 import java.util.Scanner;
-import javax.swing.*;
 
 /**
  * Clase Principal

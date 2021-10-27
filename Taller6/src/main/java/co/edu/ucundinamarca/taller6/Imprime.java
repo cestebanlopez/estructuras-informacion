@@ -1,10 +1,6 @@
 package co.edu.ucundinamarca.taller6;
 
-import co.edu.ucundinamarca.taller6.Lista;
-import co.edu.ucundinamarca.taller6.ListaDoble;
-import co.edu.ucundinamarca.taller6.ListaDobleCircular;
-import co.edu.ucundinamarca.taller6.ListaLC;
-import co.edu.ucundinamarca.taller6.Main;
+
 import java.util.Scanner;
 import org.apache.log4j.Logger;
 

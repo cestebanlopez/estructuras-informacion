@@ -1,8 +1,6 @@
 package co.edu.ucundinamarca.taller6;
 
-import co.edu.ucundinamarca.taller6.Main;
-import co.edu.ucundinamarca.taller6.NodoLC;
-import javax.swing.*;
+
 import org.apache.log4j.Logger;
 
 public class ListaLC {

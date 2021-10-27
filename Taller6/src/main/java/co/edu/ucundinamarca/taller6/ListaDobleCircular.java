@@ -1,6 +1,5 @@
 package co.edu.ucundinamarca.taller6;
 
-import co.edu.ucundinamarca.taller6.NodoDobleCircular;
 import java.util.Scanner;
 
 public class ListaDobleCircular {
