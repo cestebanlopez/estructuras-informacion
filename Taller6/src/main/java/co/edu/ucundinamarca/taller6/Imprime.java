@@ -1,6 +1,9 @@
 package co.edu.ucundinamarca.taller6;
 
-
+/**
+ *
+ * @author CAMILO
+ */
 import java.util.Scanner;
 import org.apache.log4j.Logger;
 
