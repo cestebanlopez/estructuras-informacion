@@ -11,15 +11,15 @@ import org.apache.log4j.chainsaw.Main;
 public class listas {
      static Logger log = Logger.getLogger(Main.class.getName());
  Scanner teclado = new Scanner(System.in);
-    nodo primero;
-    nodo ultimo;
+    nodos primero;
+    nodos ultimo;
     
     public listas(){
         primero=null;
         ultimo=null;
     }
    public void ingresar(int x){
-       nodo nuevo=new nodo();
+       nodos nuevo=new nodos();
        nuevo.datos=x;
        if(primero==null){
            primero=nuevo;
@@ -35,7 +35,7 @@ public class listas {
    }
        
        public void mostrar(){
-           nodo actual=new nodo();
+           nodos actual=new nodos();
            actual=primero;
            do{
                log.debug(actual.datos);
@@ -44,7 +44,7 @@ public class listas {
        }
       
        public void buscar (int x){
-    nodo actual = new nodo();
+    nodos actual = new nodos();
     actual=ultimo;
     boolean encontrado=false;
     int dato = 0;
@@ -64,7 +64,7 @@ public class listas {
     
 }
 public void modificar (int x){
-    nodo actual = new nodo ();
+    nodos actual = new nodos ();
     actual.datos=x;
     do{
         if(actual.datos==x){
