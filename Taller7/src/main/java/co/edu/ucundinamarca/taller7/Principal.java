@@ -28,7 +28,7 @@ public class Principal {
     log.info("" + pila.quitar());
 
 }
-public static void cola() {
+/*public static void cola() {
 
     ColaLista cola = new ColaLista();
     cola.insertar(1);
@@ -44,11 +44,11 @@ public static void cola() {
     log.info("" + cola.quitar());
     log.info("" + cola.quitar());
 
-}
+}*/
 
 public static void main(String[] args){
-    /*pila();*/
-    cola();
+    pila();
+   /* cola();*/
 }
 
 public static void print(String numero){
